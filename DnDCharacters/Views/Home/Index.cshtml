@@ -1,8 +1,30 @@
-﻿@{
+﻿@model List<DnDCharacters.Models.Character>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>
+        Learn about <a href="https://docs.microsoft.com/aspnet/core">building
+        Web apps with ASP.NET Core</a>.
+    </p>
+
+    @foreach (var character in @Model)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h4>@character.Name</h4>
+                <ul>
+                    <li>Str @character.Str</li>
+                    <li>Dex @character.Dex</li>
+                    <li>Con @character.Con</li>
+                    <li>Int @character.Int</li>
+                    <li>Wis @character.Wis</li>
+                    <li>Cha @character.Cha</li>
+                </ul>
+            </div>
+        </div>
+    }
 </div>
