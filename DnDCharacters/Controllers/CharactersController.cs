@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DnDCharacters.Controllers
 {
-    public class CharactersController
+    public class CharactersController : Controller
     {
         private IDnDCharacterRepository _characterRepository;
 
@@ -23,6 +23,19 @@ namespace DnDCharacters.Controllers
             List<Character> characters = _characterRepository.GetAllCharacters();
 
             return View(characters);
+        }
+
+        [HttpPost]
+        public IActionResult Create(Character character)
+        {
+            if (ModelState.IsValid == true)
+            {
+                _characterRepository.AddCharacter(character);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(character);
         }
     }
 }
