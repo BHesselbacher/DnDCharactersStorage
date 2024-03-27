@@ -7,7 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<>
+builder.Services.AddDbContext<DnDCharactersEntityFrameworkCoreDbContext>(
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DnDCharactersEntityFrameworkCoreLocalConnectionn")));
+
+builder.Services.AddScoped<IDnDCharacterRepository, DnDCharactersEntityFrameworkCoreDbContext>();
 
 var app = builder.Build();
 
