@@ -25,6 +25,12 @@ namespace DnDCharacters.Controllers
             return View(characters);
         }
 
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Create(Character character)
         {
