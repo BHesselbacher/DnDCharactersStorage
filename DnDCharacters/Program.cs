@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<DnDCharactersEntityFrameworkCoreDbContext>(
-    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DnDCharactersEntityFrameworkCoreLocalConnectionn")));
+    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DnDCharactersEntityFrameworkCoreLocalConnection")));
 
 builder.Services.AddScoped<IDnDCharacterRepository, DnDCharactersEntityFrameworkCoreDbContext>();
 
