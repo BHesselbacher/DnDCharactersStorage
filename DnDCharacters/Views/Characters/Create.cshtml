@@ -5,54 +5,54 @@
     ViewData["Title"] = "Add Character";
 }
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
-            <form method="post" action="Create">
-                <div class="form-group">
-                    <label asp-for="Name">Character Name:</label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
+<div class="card" style="width:400px">
+    <div class="card-body">
+        <h4>Character</h4>
 
-                <div class="form-group">
-                    <label asp-for="Str">Strength:</label>
-                    <input asp-for="Str" class="form-control" min="0" max="30" />
-                    <span asp-validation-for="Str" class="text-danger"></span>
-                </div>
+        <form method="post" action="Create">
+            <div class="form-group">
+                <label asp-for="Name">Name:</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div><br>
 
-                <div class="form-group">
-                    <label asp-for="Dex">Dexterity:</label>
-                    <input asp-for="Dex" class="form-control" min="0" max="30" />
-                    <span asp-validation-for="Dex" class="text-danger"></span>
-                </div>
+            <div class="form-group">
+                <label asp-for="Str">Strength:</label>
+                <input asp-for="Str" class="form-control" min="0" max="30" />
+                <span asp-validation-for="Str" class="text-danger"></span>
+            </div><br>
 
-                <div class="form-group">
-                    <label asp-for="Con">Constitution:</label>
-                    <input asp-for="Con" class="form-control" min="0" max="30" />
-                    <span asp-validation-for="Con" class="text-danger"></span>
-                </div>
+            <div class="form-group">
+                <label asp-for="Dex">Dexterity:</label>
+                <input asp-for="Dex" class="form-control" min="0" max="30" />
+                <span asp-validation-for="Dex" class="text-danger"></span>
+            </div><br>
 
-                <div class="form-group">
-                    <label asp-for="Int">Intelligence:</label>
-                    <input asp-for="Int" class="form-control" min="0" max="30" />
-                    <span asp-validation-for="Int" class="text-danger"></span>
-                </div>
+            <div class="form-group">
+                <label asp-for="Con">Constitution:</label>
+                <input asp-for="Con" class="form-control" min="0" max="30" />
+                <span asp-validation-for="Con" class="text-danger"></span>
+            </div><br>
 
-                <div class="form-group">
-                    <label asp-for="Wis">Wisdom:</label>
-                    <input asp-for="Wis" class="form-control" min="0" max="30" />
-                    <span asp-validation-for="Wis" class="text-danger"></span>
-                </div>
+            <div class="form-group">
+                <label asp-for="Int">Intelligence:</label>
+                <input asp-for="Int" class="form-control" min="0" max="30" />
+                <span asp-validation-for="Int" class="text-danger"></span>
+            </div><br>
 
-                <div class="form-group">
-                    <label asp-for="Cha">Charisma:</label>
-                    <input asp-for="Cha" class="form-control" min="0" max="30" />
-                    <span asp-validation-for="Cha" class="text-danger"></span>
-                </div>
+            <div class="form-group">
+                <label asp-for="Wis">Wisdom:</label>
+                <input asp-for="Wis" class="form-control" min="0" max="30" />
+                <span asp-validation-for="Wis" class="text-danger"></span>
+            </div><br>
 
-                <button type="submit" class="btn btn-info">Create</button>
-            </form>
-        </div>
+            <div class="form-group">
+                <label asp-for="Cha">Charisma:</label>
+                <input asp-for="Cha" class="form-control" min="0" max="30" />
+                <span asp-validation-for="Cha" class="text-danger"></span>
+            </div><br>
+
+            <button type="submit" class="btn btn-info">Create</button>
+        </form>
     </div>
 </div>
