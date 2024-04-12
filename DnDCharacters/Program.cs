@@ -1,14 +1,14 @@
 using DnDCharacters.Database;
 using DnDCharacters.Models;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<DnDCharactersEntityFrameworkCoreDbContext>(
-    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DnDCharactersEntityFrameworkCoreLocalConnection")));
+builder.Services.AddMySqlDataSource(builder.Configuration.GetConnectionString("Default"));
 
 builder.Services.AddScoped<IDnDCharacterRepository, DnDCharactersEntityFrameworkCoreDbContext>();
 
