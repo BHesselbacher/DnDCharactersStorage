@@ -1,22 +1,30 @@
-using DnDCharacters.Database;
-using DnDCharacters.Models;
-using Microsoft.EntityFrameworkCore;
-using MySqlConnector;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddMySqlDataSource(builder.Configuration.GetConnectionString("Default"));
+var connectionString = builder.Configuration.GetConnectionString("Default");
 
-//builder.Services.AddTransient<MySqlConnection>(new MySqlConnection(builder.Configuration.GetConnectionString["Defaullt"]));
-
-//builder.Services.AddScoped<IDnDCharacterRepository, DnDCharactersEntityFrameworkCoreDbContext>();
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)); 
+});
 
 var app = builder.Build();
 
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseRouting();
+
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
