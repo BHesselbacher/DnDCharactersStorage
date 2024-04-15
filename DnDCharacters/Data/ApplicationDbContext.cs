@@ -1,4 +1,4 @@
-﻿namespace DnDCharacters.Database
+﻿namespace DnDCharacters.Data
 {
     public class ApplicationDbContext : DbContext
     {
