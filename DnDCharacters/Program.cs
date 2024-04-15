@@ -10,7 +10,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddMySqlDataSource(builder.Configuration.GetConnectionString("Default"));
 
-builder.Services.AddScoped<IDnDCharacterRepository, DnDCharactersEntityFrameworkCoreDbContext>();
+//builder.Services.AddTransient<MySqlConnection>(new MySqlConnection(builder.Configuration.GetConnectionString["Defaullt"]));
+
+//builder.Services.AddScoped<IDnDCharacterRepository, DnDCharactersEntityFrameworkCoreDbContext>();
 
 var app = builder.Build();
 
