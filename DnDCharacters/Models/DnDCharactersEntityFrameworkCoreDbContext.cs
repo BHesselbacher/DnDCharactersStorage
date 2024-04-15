@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DnDCharacters.Models
 {
-    public class DnDCharactersEntityFrameworkCoreDbContext : DbContext, IDnDCharacterRepository
+    public class DnDCharactersEntityFrameworkCoreDbContext : DbContext, ApplicationDbContext
     {
         public DnDCharactersEntityFrameworkCoreDbContext(DbContextOptions<DnDCharactersEntityFrameworkCoreDbContext> options)
             : base(options) { }

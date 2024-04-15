@@ -10,9 +10,9 @@ namespace DnDCharacters.Controllers
 {
     public class CharactersController : Controller
     {
-        private IDnDCharacterRepository _characterRepository;
+        private ApplicationDbContext _characterRepository;
 
-        public CharactersController(IDnDCharacterRepository characterRepository)
+        public CharactersController(ApplicationDbContext characterRepository)
         {
             _characterRepository = characterRepository;
         }
